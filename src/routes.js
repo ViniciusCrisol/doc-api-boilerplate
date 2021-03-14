@@ -1,12 +1,14 @@
 import { Router } from 'express';
 import {
-  get as getReport,
-  create as createReport,
-} from './controllers/report_controller';
+  get as getPdf,
+  create as createPdf,
+} from './controllers/pdf_controller';
+import { create as createEmail } from './controllers/email_controller';
 
 const routes = Router();
 
-routes.use('/report/:id', getReport);
-routes.use('/create/report/:id', createReport);
+routes.get('/pdf/:data', getPdf);
+routes.post('/pdf/create', createPdf);
+routes.post('/send/email', createEmail);
 
 export default routes;

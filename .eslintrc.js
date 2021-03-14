@@ -16,6 +16,7 @@ module.exports = {
   rules: {
     camelcase: 'off',
     'no-param-reassign': 'off',
+    'consistent-return': 'off',
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
     'import/prefer-default-export': 'off',
