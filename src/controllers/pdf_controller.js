@@ -1,7 +1,11 @@
 import ejs from 'ejs';
 import puppeteer from 'puppeteer';
 import { templateError, defaultError } from '../utils/errors_config';
-import { getPdfData, getPdfTemplate, getPdfUrl } from '../lib/pdf_config';
+import {
+  getPdfUrl,
+  getPdfData,
+  getPdfTemplate,
+} from '../services/pdf_services';
 
 async function create(request, response) {
   const { template, user_id } = request.body;

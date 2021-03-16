@@ -1,12 +1,12 @@
 import path from 'path';
 import databse from '../utils/fake_database';
 
-function getPdfUrl(data) {
-  return `${process.env.BASE_URL}/pdf/${JSON.stringify(data)}`;
-}
-
 function joinTemplatePath(fileName) {
   return path.join(__dirname, '..', 'views', 'documents', fileName);
+}
+
+function getPdfUrl(data) {
+  return `${process.env.BASE_URL}/pdf/${JSON.stringify(data)}`;
 }
 
 function getPdfTemplate(type) {

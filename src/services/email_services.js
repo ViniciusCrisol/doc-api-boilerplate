@@ -60,4 +60,4 @@ function getEmailData(userId, type) {
   }
 }
 
-export { getEmailConfig, getEmailData, getEmailTemplate };
+export { getEmailTemplate, getEmailConfig, getEmailData };

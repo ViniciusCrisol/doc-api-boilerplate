@@ -6,10 +6,10 @@ import {
   getEmailData,
   getEmailConfig,
   getEmailTemplate,
-} from '../lib/email_config';
+} from '../services/email_services';
 
 async function create(request, response) {
-  const { id, type, to } = request.body;
+  const { user_id, type, to } = request.body;
 
   const emailConfig = getEmailConfig(type);
   if (!emailConfig) {
@@ -19,7 +19,7 @@ async function create(request, response) {
   const emailTemplate = getEmailTemplate(type);
   const transporter = nodemailer.createTransport(transporterConfig);
 
-  const emailData = getEmailData(id, type);
+  const emailData = getEmailData(user_id, type);
   if (!emailData) {
     return response.status(defaultError.status).json(defaultError.message);
   }
